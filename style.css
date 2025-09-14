@@ -1,0 +1,106 @@
+/* Rafay's Power Gym - style.css
+   Short comments on each line to learn what it does */
+
+/* reset basics */
+* { box-sizing: border-box; margin: 0; padding: 0; } /* make layout predictable */
+
+html { scroll-behavior: smooth; } /* smooth scroll for anchor links */
+
+body {
+  font-family: 'Inter', Arial, sans-serif; /* modern readable font */
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%); /* soft page bg */
+  color: #0b2b2b; /* dark text */
+  line-height: 1.6; /* spacing */
+}
+.nav-link {
+  color: black !important;   /* ✅ applies directly to Bootstrap links */
+}
+
+/* NAVBAR styling */
+.nav-dark {background: linear-gradient(
+  135deg,
+  #013220 0%,
+  #025928 10%,
+  #037d3a 20%,
+  #0a9d46 30%,
+  #16c172 40%,
+  #1db954 50%,
+  #2ecc71 60%,
+  #27ae60 70%,
+  #145a32 80%,
+  #00ff66 100%
+);
+ } /* dark teal gradient */
+.navbar .brand { font-weight: 700; color:#0a0a0a; } /* golden brand color */
+
+/* HERO large landing */
+.hero-gym {
+  height: 100vh; /* tall hero */
+  background: linear-gradient(rgba(2,10,12,0.6), rgba(2,10,12,0.6)),
+              url('./bck1.jpg') center/cover no-repeat; /* bg image */
+  display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+}
+.hero-inner { max-width: 900px; padding: 20px; } /* content width */
+.hero-title { font-size: 2.6rem; letter-spacing: 1px; margin-bottom: 12px; } /* big headline */
+.hero-sub { font-size: 1.05rem; opacity: 0.95; margin-bottom: 18px; } /* subtitle */
+.hero-ctas .btn { margin: 6px; border-radius: 30px; padding: 10px 20px; } /* button look */
+.btn-primary { background: #013220; color: white; border: none; } /* bright CTA */
+.btn-outline { color: white; border: 1px solid rgba(255,255,255,0.18); background: transparent; }
+
+/* features cards */
+.features { padding: 40px 20px; } /* section padding */
+.feature-grid { display:flex; gap: 18px; justify-content:center; flex-wrap:wrap; } /* responsive row */
+.feature-card { background: white; padding: 18px; width: 260px; border-radius: 12px; box-shadow: 0 10px 30px rgba(3,20,20,0.06); text-align:center; transition: transform .25s; } /* card style */
+.feature-card:hover { transform: translateY(-8px); } /* hover lift */
+
+/* alt background block for testimonials */
+.alt-bg { background: linear-gradient(180deg,#f1f6f9,#ffffff); } /* subtle block */
+.testimonials { padding: 40px 20px; } /* padding */
+.test-grid { display:flex; gap: 18px; justify-content:center; flex-wrap:wrap; } /* layout */
+.test-card { background: #ffffff; padding: 16px; width: 320px; border-radius:10px; box-shadow: 0 8px 20px rgba(3,18,20,0.05); font-style: italic; } /* testimonial look */
+
+/* common page sections (smaller hero for internal pages) */
+.small-hero { padding: 80px 0 30px 0; text-align:center; background: linear-gradient(180deg,#ffffff,#f8fafc); color:#072227; } /* smaller header */
+.page-content { padding: 30px 10px 60px 10px; max-width:1100px; margin: 0 auto; } /* main content area */
+
+/* classes grid */
+.classes-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 18px; margin-top: 20px; } /* responsive grid */
+.class-card { background: white; padding: 18px; border-radius: 12px; box-shadow: 0 8px 24px rgba(2,16,18,0.04); transition: transform .25s; } /* class box */
+.class-card:hover { transform: translateY(-6px); }
+
+/* trainers */
+.trainers-grid { display:flex; gap: 18px; justify-content:center; flex-wrap:wrap; margin-top:20px; } /* trainers row */
+.trainer-card { background: white; padding: 18px; width: 220px; border-radius: 10px; text-align:center; box-shadow: 0 8px 20px rgba(3,18,20,0.04); } /* trainer box */
+.avatar { width:72px; height:72px; border-radius:50%; background: linear-gradient(135deg,#ffd166,#ff8a5b); display:flex; align-items:center; justify-content:center; font-weight:700; margin: 0 auto 10px auto; color:#072227; } /* letter avatar */
+
+/* plans cards */
+.plans-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:20px; } /* plans layout */
+.plan-card { background:white; padding: 20px; border-radius:12px; text-align:center; box-shadow: 0 10px 28px rgba(2,16,18,0.05); } /* single plan */
+.plan-card.featured { border: 2px solid #0a9d46; transform: translateY(-6px); } /* featured highlight */
+.price { font-size:1.6rem; margin: 12px 0; color: #072227; font-weight:700; } /* price style */
+
+/* contact form */
+.contact-form { display:flex; flex-direction:column; gap:12px; max-width:560px; margin: 0 auto;  } /* center form */
+.contact-form input, .contact-form textarea { padding: 10px; border-radius:8px; border: 1px solid #dbe7e7; }
+
+/* footer */
+.site-footer { background: linear-gradient(
+  135deg,
+  #013220 0%,
+  #025928 10%,
+  #037d3a 20%,
+  #0a9d46 30%,
+  #16c172 40%,
+  #1db954 50%,
+  #2ecc71 60%,
+  #27ae60 70%,
+  #145a32 80%,
+  #00ff66 100%
+); color: white; padding: 18px 0; margin-top: 30px; text-align:center; } /* footer */
+
+
+@media (max-width: 768px) {
+  .hero-gym { height: 70vh; } /* reduce hero height on mobile */
+  .hero-title { font-size: 1.8rem; } /* smaller text on mobile */
+  .feature-grid { flex-direction: column; align-items:center; } /* stack features */
+}
